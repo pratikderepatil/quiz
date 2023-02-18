@@ -6,13 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Login page</title>
 		<link rel="stylesheet" href="./style/login.css" />
-		<script src="./scripts/login.js"></script>
 	</head>
 	<body>
 		<div id="navbar">
 			<a href="./index.html">Home</a>
 		</div>
-		<form>
+		<form id="login-form">
 			<h3>Login Here</h3>
 
 			<label for="email">Email</label>
@@ -21,7 +20,8 @@
 			<label for="password">Password</label>
 			<input type="password" placeholder="Enter your password" id="password" />
 			<p>Don't have an account? <a href="./signup.html">Signup</a></p>
-			<button>Log In</button>
+			<button id="login-button" type="submit">Log In</button>
 		</form>
+		<script src="./scripts/login.js"></script>
 	</body>
 </html>

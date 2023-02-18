@@ -6,14 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Signup page</title>
 		<link rel="stylesheet" href="./style/signup.css" />
-		<script src="./scripts/signup.js"></script>
 	</head>
 	<body>
 		<div id="navbar">
 			<a href="./index.html">Home</a>
 		</div>
-		<form>
+		<form id="signup-form">
 			<h3>Signup Here</h3>
+
+			<label for="name">Name</label>
+			<input type="name" placeholder="Enter your fullname" id="name" />
 
 			<label for="email">Email</label>
 			<input type="email" placeholder="Enter your email" id="email" />
@@ -21,7 +23,8 @@
 			<label for="password">Password</label>
 			<input type="password" placeholder="Enter your password" id="password" />
 			<p>Already have an account! <a href="./login.html">Login</a></p>
-			<button>Sign up</button>
+			<button id="signup-button" type="submit">Sign up</button>
 		</form>
+		<script src="./scripts/signup.js"></script>
 	</body>
 </html>
