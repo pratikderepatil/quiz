@@ -9,11 +9,10 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 2,
-		type: "checkbox",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -21,7 +20,7 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4", "sample answer2"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 3,
@@ -33,11 +32,10 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 4,
-		type: "checkbox",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -45,7 +43,7 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4", "sample answer2"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 5,
@@ -57,11 +55,10 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 6,
-		type: "checkbox",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -69,7 +66,7 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4", "sample answer2"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 7,
@@ -81,11 +78,10 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 8,
-		type: "checkbox",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -93,7 +89,7 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4", "sample answer2"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 9,
@@ -105,11 +101,10 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4"],
+		correct_answer: "sample answer4",
 	},
 	{
 		id: 10,
-		type: "checkbox",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -117,6 +112,6 @@ export const quiz = [
 			"sample answer3",
 			"sample answer4",
 		],
-		correct_answer: ["sample answer4", "sample answer2"],
+		correct_answer: "sample answer4",
 	},
 ];

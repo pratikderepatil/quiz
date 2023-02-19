@@ -9,52 +9,71 @@ document.getElementById("logout").addEventListener("click", () => {
 });
 
 let currentQuestion = 0;
+let currentAnswer = "";
+let point = 0;
+
 document.getElementById("name").innerText = "Hi, " + currentUser.fullname;
-const nextButton = document.getElementById("next-button");
-const skipButton = document.getElementById("skip-button");
+
 const question = document.getElementById("question");
 const options = document.getElementById("options");
 
 const displayQuestion = () => {
 	question.innerText = quiz[currentQuestion].question;
 	options.innerHTML = "";
-	if (quiz[currentQuestion].type === "radio") {
-		for (let i = 0; i < quiz[currentQuestion].options.length; i++) {
-			const displayOption = document.createElement("div");
-			displayOption.className = "option";
-			const option = document.createElement("input");
-			const optionValue = document.createElement("p");
-			option.type = "radio";
-			option.name = currentQuestion;
-			option.value = quiz[currentQuestion].options[i];
-			optionValue.innerText = quiz[currentQuestion].options[i];
-			displayOption.append(option, optionValue);
-			options.append(displayOption);
-		}
-	} else {
-		for (let i = 0; i < quiz[currentQuestion].options.length; i++) {
-			const displayOption = document.createElement("div");
-			displayOption.className = "option";
-			const option = document.createElement("input");
-			const optionValue = document.createElement("p");
-			option.type = "checkbox";
-			option.name = currentQuestion;
-			option.value = quiz[currentQuestion].options[i];
-			optionValue.innerText = quiz[currentQuestion].options[i];
-			displayOption.append(option, optionValue);
-			options.append(displayOption);
-		}
+	point = 0;
+	currentAnswer = "";
+	for (let i = 0; i < quiz[currentQuestion].options.length; i++) {
+		const displayOption = document.createElement("div");
+		displayOption.className = "option";
+		const option = document.createElement("input");
+		const optionValue = document.createElement("p");
+		option.type = "radio";
+		option.name = currentQuestion;
+		option.value = quiz[currentQuestion].options[i];
+		optionValue.innerText = quiz[currentQuestion].options[i];
+		displayOption.append(option, optionValue);
+		options.append(displayOption);
+		option.addEventListener("change", () => {
+			currentAnswer = option.value;
+		});
 	}
 };
 
+const checkAnswer = () => {
+	if (quiz[currentQuestion].correct_answer === currentAnswer) {
+		point = 1;
+	} else {
+		point = 0;
+	}
+};
+
+const saveAnswer = () => {
+	currentUser.attempts.push({
+		...quiz[currentQuestion],
+		userAnswer: currentAnswer,
+		point: point,
+	});
+	localStorage.setItem("Current user", JSON.stringify(currentUser));
+};
+
 document.getElementById("next-button").addEventListener("click", () => {
-	
-	currentQuestion++;
-	displayQuestion();
+	if (currentQuestion === quiz.length - 1) {
+		alert("hello");
+	} else {
+		checkAnswer();
+		saveAnswer();
+		currentQuestion++;
+		displayQuestion();
+	}
 });
 document.getElementById("skip-button").addEventListener("click", () => {
-	currentQuestion++;
-	displayQuestion();
+	if (currentQuestion === quiz.length - 1) {
+		alert("hello");
+	} else {
+		saveAnswer();
+		currentQuestion++;
+		displayQuestion();
+	}
 });
 
 displayQuestion();
