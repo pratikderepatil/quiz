@@ -1,0 +1,57 @@
+body {
+	background-color: whitesmoke;
+}
+#navbar {
+	display: flex;
+	justify-content: space-between;
+	gap: 3rem;
+	padding: 1rem 2rem;
+}
+
+#navbar > button {
+	background-color: transparent;
+	border: none;
+	font-size: large;
+}
+
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 2rem;
+}
+
+.buttons > button {
+	border: none;
+	font-size: large;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+}
+
+#next-button {
+	background-color: #25d366;
+}
+#skip-button {
+	background-color: grey;
+	color: white;
+}
+
+#display {
+	width: 70vw;
+	display: flex;
+	flex-direction: column;
+	margin: 10vh auto;
+	padding: 2rem 4rem;
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+	border-radius: 1rem;
+}
+
+.option {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+#options {
+	display: grid;
+	grid-template-columns: repeat(2, 40%);
+	font-size: large;
+}
