@@ -1,7 +1,6 @@
 export const quiz = [
 	{
 		id: 1,
-		type: "radio",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -24,7 +23,6 @@ export const quiz = [
 	},
 	{
 		id: 3,
-		type: "radio",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -47,7 +45,6 @@ export const quiz = [
 	},
 	{
 		id: 5,
-		type: "radio",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -70,7 +67,6 @@ export const quiz = [
 	},
 	{
 		id: 7,
-		type: "radio",
 		question: "Sample Question",
 		options: [
 			"sample answer1",
@@ -93,7 +89,6 @@ export const quiz = [
 	},
 	{
 		id: 9,
-		type: "radio",
 		question: "Sample Question",
 		options: [
 			"sample answer1",

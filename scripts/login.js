@@ -10,7 +10,7 @@ loginButton.addEventListener("click", (e) => {
 		if (users[i].email === email && users[i].password === password) {
 			auth = true;
 			window.location.href = "./quiz.html";
-			currentUser = { ...users[i], attempts: [[]] };
+			currentUser = { ...users[i], attempts: [], skipped: 0, totalPoints: 0 };
 			localStorage.setItem("Current user", JSON.stringify(currentUser));
 			break;
 		}

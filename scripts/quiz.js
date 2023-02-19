@@ -11,6 +11,8 @@ document.getElementById("logout").addEventListener("click", () => {
 let currentQuestion = 0;
 let currentAnswer = "";
 let point = 0;
+let totalPoint = 0;
+let skipped = 0;
 
 document.getElementById("name").innerText = "Hi, " + currentUser.fullname;
 
@@ -18,7 +20,8 @@ const question = document.getElementById("question");
 const options = document.getElementById("options");
 
 const displayQuestion = () => {
-	question.innerText = quiz[currentQuestion].question;
+	question.innerText =
+		currentQuestion + 1 + ".  " + quiz[currentQuestion].question;
 	options.innerHTML = "";
 	point = 0;
 	currentAnswer = "";
@@ -42,6 +45,7 @@ const displayQuestion = () => {
 const checkAnswer = () => {
 	if (quiz[currentQuestion].correct_answer === currentAnswer) {
 		point = 1;
+		totalPoint++;
 	} else {
 		point = 0;
 	}
@@ -58,7 +62,10 @@ const saveAnswer = () => {
 
 document.getElementById("next-button").addEventListener("click", () => {
 	if (currentQuestion === quiz.length - 1) {
-		alert("hello");
+		currentUser.totalPoint = totalPoint;
+		currentUser.skipped = skipped;
+		localStorage.setItem("Current user", JSON.stringify(currentUser));
+		window.location.href = "./result.html";
 	} else {
 		checkAnswer();
 		saveAnswer();
@@ -67,10 +74,14 @@ document.getElementById("next-button").addEventListener("click", () => {
 	}
 });
 document.getElementById("skip-button").addEventListener("click", () => {
-	if (currentQuestion === quiz.length - 1) {
-		alert("hello");
+	if (currentQuestion === quiz.length) {
+		currentUser.totalPoint = totalPoint;
+		currentUser.skipped = skipped;
+		localStorage.setItem("Current user", JSON.stringify(currentUser));
+		window.location.href = "./result.html";
 	} else {
 		saveAnswer();
+		skipped++;
 		currentQuestion++;
 		displayQuestion();
 	}
